@@ -4,6 +4,7 @@ import { fetchWeather } from '../redux/weatherSlice';
 
 const WeatherForm = () => {
   const [location, setLocation] = useState('');
+  const [focused, setFocused] = useState(false)
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -20,14 +21,19 @@ const WeatherForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Enter city or zip code"
-        value={location}
-        onChange={handleChange}
-      />
-      <button type="submit">Get Weather</button>
-    </form>
+    <div className="input-container">
+      <label className={location ? "active" : ""}>Enter city or zip code</label>
+     <input
+      type="text"
+      value={location}
+      onChange={handleChange}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+     />
+    </div>
+   <button type="submit">Get Weather</button>
+  </form>
+
   );
 };
 
