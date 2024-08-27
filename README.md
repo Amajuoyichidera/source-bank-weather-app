@@ -35,7 +35,7 @@ A simple weather application built with React JS, Redux Toolkit, and Axios. This
 
 3. **Install Dependencies**
 
-   npm install or yarn install
+   npm install --legacy-peer-deps or yarn install --legacy-peer-deps
 
 4. **Run the Development Server**
    

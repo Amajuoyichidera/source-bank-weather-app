@@ -4,7 +4,7 @@ import { fetchWeather } from '../redux/weatherSlice';
 
 const WeatherForm = () => {
   const [location, setLocation] = useState('');
-  const [focused, setFocused] = useState(false)
+  const [, setFocused] = useState(false)
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
